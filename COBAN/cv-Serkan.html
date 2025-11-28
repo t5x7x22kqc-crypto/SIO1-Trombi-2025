@@ -4,102 +4,195 @@
     <meta charset="UTF-8">
     <title>CV - Serkan Coban</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Police JDM / arcade -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #1e1e1e; /* Fond sombre */
+            color: #eee;
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        /* Titres principaux */
+        .title-jdm {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .title-jdm:hover {
+            color: #ff6666;
+            text-shadow: 0 0 10px #ff4d4d;
+        }
+
+        /* Blocs */
+        .block {
+            background: #252526;
+            border-left: 4px solid #ff4d4d;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .block:hover {
+            border-left-color: #ff6666;
+            box-shadow: 0 0 15px #ff4d4d;
+        }
+
+        /* Lignes de code */
+        .code-line {
+            font-family: "JetBrains Mono", monospace;
+            color: #c5c5c5;
+        }
+
+        /* Image */
+        img {
+            border: 2px solid #ff4d4d;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        img:hover {
+            border-color: #ff6666;
+            box-shadow: 0 0 15px #ff4d4d;
+        }
+
+        /* Bullets style JDM */
+        .jdm-bullet li {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .highlight-red {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        .highlight-blue {
+            color: #4da6ff;
+            font-weight: bold;
+        }
+
+        .highlight-yellow {
+            color: #ffd24d;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100 p-10">
+<body class="p-10">
 
-    <div class="max-w-3xl mx-auto bg-white shadow-lg p-8 rounded-lg">
+    <div class="max-w-3xl mx-auto">
 
-        <div class="flex items-center gap-6 mb-8">
-            <img src="photo-Serkan.jpg" alt="Photo de Serkan Coban" class="w-32 h-32 object-cover rounded-full border">
+        <!-- HEADER -->
+        <div class="flex items-center gap-6 mb-10">
+            <img src="photo-Serkan.jpg" alt="Serkan Coban" class="w-32 h-32 rounded-lg object-cover">
             <div>
-                <h1 class="text-3xl font-bold">Serkan COBAN</h1>
-                <p class="text-gray-600">Belleville-en-Beaujolais (69220)</p>
-                <p class="text-gray-600">Permis B (véhiculé)</p>
+                <h1 class="text-4xl font-bold title-jdm">Serkan COBAN</h1>
+                <p class="text-gray-300">Belleville-en-Beaujolais (69220)</p>
+                <p class="text-gray-300">Permis B – Véhicule personnel</p>
             </div>
         </div>
 
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Coordonnées</h2>
-        <ul class="mb-6">
-            <li>Email : <strong>serkancoban.pro@gmail.com</strong></li>
-            <li>Téléphone : <strong>07 66 42 86 18</strong></li>
-        </ul>
+        <!-- COORDONNÉES -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Coordonnées</h2>
+            <p class="code-line"><span class="highlight-red">Email :</span> serkancoban.pro@gmail.com</p>
+            <p class="code-line"><span class="highlight-red">Téléphone :</span> 07 66 42 86 18</p>
+        </div>
 
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Recherche de stage</h2>
-        <p class="mb-6">
-            Recherche d’un stage en développement du <strong>25 mai 2026 au 26 juin 2026</strong>,
-            secteur Mâcon → Lyon Nord.
-        </p>
+        <!-- STAGE -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Recherche de Stage</h2>
+            <p class="code-line">
+                Recherche d’un stage en développement du 
+                <span class="highlight-red">25 mai 2026 au 26 juin 2026</span>  
+                (Secteur <span class="highlight-yellow">Mâcon → Lyon Nord</span>)
+            </p>
+        </div>
 
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Formation</h2>
-        <ul class="list-disc ml-6 mb-6">
-            <li><strong>BTS SIO – Services Informatiques aux Organisations</strong><br>
-                Business School – Limas (en cours)
-            </li>
-        </ul>
+        <!-- FORMATION -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Formation</h2>
+            <p class="code-line"><span class="highlight-red">BTS SIO</span> – Services Informatiques aux Organisations (en cours)</p>
+            <p class="code-line">Business School – Limas</p>
+        </div>
 
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Expérience Professionnelle</h2>
+        <!-- EXPÉRIENCES -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Expériences Professionnelles</h2>
 
-        <div class="mb-6">
-            <h3 class="font-semibold">Job étudiant (en cours) – Intermarché (Belleville)</h3>
-            <ul class="list-disc ml-6">
-                <li>Facing</li>
-                <li>Restock</li>
-                <li>Travail en équipe</li>
-                <li>Organisation et rapidité</li>
+            <p class="code-line"><span class="highlight-red">Job étudiant</span> (en cours) – Intermarché</p>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li>🏎️ Facing</li>
+                <li>⚡ Restock</li>
+                <li>🤝 Travail en équipe</li>
+                <li>⏱️ Organisation / rapidité</li>
+            </ul>
+            <br>
+
+            <p class="code-line"><span class="highlight-red">Stage 1ère Bac Pro</span> – COMPUCITY Informatique</p>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li>🏎️ Montage de PC personnalisés</li>
+                <li>⚡ Ventes matériel informatique</li>
+                <li>💾 Récupération de données</li>
+                <li>🛠️ Dépannage informatique</li>
+            </ul>
+            <br>
+
+            <p class="code-line"><span class="highlight-red">Stage 2nde Bac Pro</span> – ISINET Informatique</p>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li>💾 Transfert de données</li>
+                <li>⚡ Déploiement matériel en écoles</li>
+                <li>📝 Administration de contrats</li>
+                <li>🛠️ Dépannage informatique</li>
             </ul>
         </div>
 
-        <div class="mb-6">
-            <h3 class="font-semibold">Stage de 1ère Bac Pro (4 + 6 semaines) – COMPUCITY Informatique</h3>
-            <ul class="list-disc ml-6">
-                <li>Montage de PC personnalisé</li>
-                <li>Vente de matériel informatique</li>
-                <li>Récupération de données</li>
-                <li>Dépannage informatique</li>
+        <!-- PROJET PERSO -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Projet Personnel</h2>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li>🏎️ Création d’un jeu vidéo 2D de drift en <span class="highlight-red">C#</span> (Unity)</li>
+                <li>⚡ Architecture orientée objet</li>
+                <li>📦 Scènes, prefabs, scripts organisés</li>
+                <li>💥 Gestion collisions, scoring, timer</li>
             </ul>
         </div>
 
-        <div class="mb-6">
-            <h3 class="font-semibold">Stage de 2nde Bac Pro (6 semaines) – ISINET Informatique</h3>
-            <ul class="list-disc ml-6">
-                <li>Transfert de données</li>
-                <li>Gestion et administration de contrats</li>
-                <li>Déploiement de matériel dans plusieurs écoles</li>
-                <li>Récupération de données</li>
-                <li>Dépannage informatique</li>
+        <!-- COMPÉTENCES -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Compétences</h2>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li><span class="highlight-red">HTML</span> / <span class="highlight-red">CSS</span> / <span class="highlight-blue">SQL</span> / <span class="highlight-red">C</span></li>
+                <li>⚡ Réseau, VM, dépannage informatique</li>
+                <li>🏎️ Montage de PC (avancé)</li>
+                <li>🤝 Travail en équipe</li>
+                <li>📝 Gestion de projet</li>
             </ul>
         </div>
 
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Projet personnel</h2>
-        <ul class="list-disc ml-6 mb-6">
-            <li>Création d’un jeu vidéo 2D de drift en C# avec Unity</li>
-            <li>Utilisation du C# orienté objet</li>
-            <li>Organisation du projet (scènes, prefabs, scripts)</li>
-            <li>Gestion des collisions, scoring, chronomètre</li>
-        </ul>
+        <!-- LANGUES -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Langues</h2>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li>🇬🇧 Anglais : B2</li>
+                <li>🇹🇷 Turc : B1</li>
+            </ul>
+        </div>
 
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Compétences</h2>
-        <ul class="list-disc ml-6 mb-6">
-            <li>HTML / CSS / SQL / C</li>
-            <li>Réseau, création de VM</li>
-            <li>Dépannage informatique</li>
-            <li>Montage de PC (avancé)</li>
-            <li>Travail en équipe, gestion de projet</li>
-        </ul>
-
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Langues</h2>
-        <ul class="list-disc ml-6 mb-6">
-            <li>Anglais : B2</li>
-            <li>Turc : B1</li>
-        </ul>
-
-        <h2 class="text-xl font-semibold border-b pb-1 mb-3">Centres d’intérêt</h2>
-        <ul class="list-disc ml-6">
-            <li>Montage PC avancé</li>
-            <li>Automobile (mécanique, pilotage)</li>
-            <li>Histoire</li>
-        </ul>
+        <!-- INTÉRÊTS -->
+        <div class="block">
+            <h2 class="text-xl font-bold title-jdm mb-2">Centres d’intérêt</h2>
+            <ul class="jdm-bullet ml-6 text-gray-300">
+                <li>🏎️ Montage PC avancé</li>
+                <li>🚗 Automobile : mécanique & pilotage</li>
+                <li>📚 Histoire</li>
+            </ul>
+        </div>
 
     </div>
 

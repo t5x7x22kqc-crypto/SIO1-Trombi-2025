@@ -1,0 +1,28 @@
+#COBAN {
+    background: #111;
+    border: 2px solid #ff1e1e;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 30, 30, 0.7);
+    transition: 0.2s;
+}
+
+#COBAN:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px rgba(255, 30, 30, 1);
+}
+
+#COBAN p {
+    color: #ff1e1e;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+}
+
+
+/* Texte */
+#COBAN p {
+    color: #ff1a1a;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ff1a1a;
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+}
