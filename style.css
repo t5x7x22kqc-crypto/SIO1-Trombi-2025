@@ -41,56 +41,78 @@
 }
 
 /* =========================================
-   STYLE PERSONNALISÉ POUR LILLIAN (LACHIZE)
+   STYLE PERSONNALISÉ "ULTIMATE RGB" POUR LILLIAN
    ========================================= */
 
-/* 1. Animation des couleurs RGB + Lumière Néon */
+/* 0. Importation de la police futuriste "Orbitron" depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* 1. Animation des couleurs RGB (Bordure + Ombre) */
 @keyframes rgb-glow-lillian {
-    0%   { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; } /* Rouge */
-    17%  { border-color: #ffff00; box-shadow: 0 0 15px #ffff00; } /* Jaune */
-    33%  { border-color: #00ff00; box-shadow: 0 0 15px #00ff00; } /* Vert */
-    50%  { border-color: #00ffff; box-shadow: 0 0 15px #00ffff; } /* Cyan */
-    67%  { border-color: #0000ff; box-shadow: 0 0 15px #0000ff; } /* Bleu */
-    83%  { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; } /* Magenta */
-    100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; } /* Retour Rouge */
+    0%   { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; }
+    17%  { border-color: #ffff00; box-shadow: 0 0 15px #ffff00; }
+    33%  { border-color: #00ff00; box-shadow: 0 0 15px #00ff00; }
+    50%  { border-color: #00ffff; box-shadow: 0 0 15px #00ffff; }
+    67%  { border-color: #0000ff; box-shadow: 0 0 15px #0000ff; }
+    83%  { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+    100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; }
 }
 
-/* 2. Animation de Lévitation (Flottement haut/bas) */
+/* 2. Animation de Lévitation (Flottement) */
 @keyframes float-lillian {
     0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-12px); } /* Monte de 12px */
-    100% { transform: translateY(0px); }   /* Redescend */
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
 }
 
-/* 3. Configuration du cadre */
+/* 3. Animation du FOND (Background) Liquide */
+@keyframes rainbow-bg {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 4. Configuration Principale du Cadre */
 #LACHIZE {
-    /* Bordure épaisse pour bien voir le RGB */
+    /* --- TYPOGRAPHIE --- */
+    font-family: 'Orbitron', sans-serif; /* Nouvelle police */
+    font-weight: 700; /* Gras */
+    color: white; /* Texte en blanc pour le contraste */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Ombre noire sous le texte pour la lisibilité */
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px; /* Coins un peu arrondis */
+
+    /* --- BORDURE --- */
     border-width: 4px !important;
     border-style: solid !important;
-    background-color: white; /* Propre sur le fond */
 
-    /* Lancement des 2 animations en même temps :
-       - rgb-glow-lillian : dure 3s, linéaire, infini
-       - float-lillian : dure 4s, fluide, infini */
+    /* --- FOND RGB ANIMÉ --- */
+    /* On crée un dégradé long qui contient toutes les couleurs */
+    background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff, #ff0000);
+    background-size: 400% 400%; /* On agrandit le fond pour pouvoir le bouger */
+
+    /* --- LANCEMENT DES ANIMATIONS --- 
+       On ajoute 'rainbow-bg' à la liste des animations existantes */
     animation: 
         rgb-glow-lillian 3s linear infinite, 
-        float-lillian 4s ease-in-out infinite;
+        float-lillian 4s ease-in-out infinite,
+        rainbow-bg 8s ease infinite; /* Fond plus lent (8s) pour un effet fluide */
 
-    /* Transition douce pour l'effet de zoom */
     transition: transform 0.3s ease;
 }
 
-/* 4. Comportement au survol de la souris */
+/* 5. Comportement au survol (Hover) */
 #LACHIZE:hover {
-    /* On garde le RGB (running) mais on PAUSE la lévitation (paused) */
-    animation-play-state: running, paused;
-
-    /* On applique le ZOOM et on le maintient un peu en hauteur */
-    transform: scale(1.1) translateY(-12px);
+    /* On pause la lévitation pour faciliter le clic, mais le RGB continue */
+    animation-play-state: running, paused, running;
     
-    /* On s'assure que le cadre passe devant les autres */
-    z-index: 50; 
+    transform: scale(1.1) translateY(-12px);
+    z-index: 50;
     cursor: pointer;
+    
+    /* Petit bonus : on accélère le fond quand on passe la souris */
+    animation-duration: 3s, 4s, 2s; 
 }
 
 /* --- FIN DU STYLE POUR LILLIAN --- */
